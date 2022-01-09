@@ -1,3 +1,6 @@
 # LeetCode_v2021
 
-Python version: 3.9.6
+
+LeetCode刷题打卡
+
+Python 版本：3.9.7
