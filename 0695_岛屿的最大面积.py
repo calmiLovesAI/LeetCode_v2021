@@ -3,6 +3,7 @@ from typing import List
 
 class Solution:
     def __init__(self):
+        self.visited = None
         self.m = 0  # 长
         self.n = 0  # 宽
         self.res = 0  # 最大面积
