@@ -26,8 +26,6 @@ class Solution:
         self.dfs(grid, i, j - 1)
         self.dfs(grid, i, j + 1)
 
-        return self.current_area
-
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         self.m = len(grid)
         self.n = len(grid[0])
@@ -35,7 +33,8 @@ class Solution:
         for i in range(self.m):
             for j in range(self.n):
                 if grid[i][j] == 1 and not self.visited[i][j]:
-                    self.res = max(self.res, self.dfs(grid, i, j))
+                    self.dfs(grid, i, j)
+                    self.res = max(self.res, self.current_area)
                     self.current_area = 0
         return self.res
 
