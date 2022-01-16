@@ -1,4 +1,20 @@
-class Solution:
+class Solution1:
+    def minMoves(self, target: int, maxDoubles: int) -> int:
+        cnt = 0
+        while target > 1:
+            if maxDoubles == 0:
+                return cnt + target - 1
+            if target % 2 == 0 and maxDoubles > 0:
+                target //= 2
+                maxDoubles -= 1
+            else:
+                target -= 1
+            cnt += 1
+        return cnt
+
+
+# 二维动态规划
+class Solution2:
     def minMoves(self, target: int, maxDoubles: int) -> int:
         if maxDoubles == 0:
             return target - 1
@@ -13,4 +29,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-    print(Solution().minMoves(19, 2))
+    print(Solution1().minMoves(656101987, 1))
