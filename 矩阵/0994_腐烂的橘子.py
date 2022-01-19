@@ -9,11 +9,17 @@ class Solution:
         m = len(grid)
         n = len(grid[0])
         q = deque()
+        flag = True
         t = -1
         for i in range(m):
             for j in range(n):
+                if grid[i][j] == 1:
+                    flag = False
                 if grid[i][j] == 2:
                     q.append([i, j])
+
+        if flag:
+            return 0
 
         while q:
             size = len(q)
