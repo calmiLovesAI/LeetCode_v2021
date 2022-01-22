@@ -15,4 +15,3 @@ class Solution:
             f[i] += t
             ans = max(ans, f[i])
         return ans
-        
